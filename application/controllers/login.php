@@ -9,7 +9,6 @@
 			$hm = $h * 60;
 			$ms = $hm * 60;
 			$this->waktu = gmdate('Y-m-d H:i:s',time()-($ms));
-			$this->load->library('auth');
 			$this->load->model('m_akun');
 		}
 		
@@ -53,13 +52,6 @@
 					echo warning('Sorry, username or password you entered is incorrect ...','../login');
 				}
 			}
-		}
-		
-		function lendra_logout()
-		{
-			$this->auth->logout();
-			echo warning('You have successfully logged out ...'.'\n'.
-						'Logout Now :  '.$this->waktu,'../login');
 		}
 		
 		function lendra_home()
